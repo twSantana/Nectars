@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login System</title>
+  <link rel="stylesheet" href="styleLog.css" />
+</head>
+<body>
+  <div class="container">
+    
+    <!-- Painel da esquerda com imagem de fundo (estilizado no CSS) -->
+    <div class="left-panel"></div>
+
+    <!-- Painel da direita com os formulários -->
+    <div class="right-panel">
+      <div class="form-wrapper">
+
+        <!-- FORMULÁRIO DE LOGIN -->
+        <div class="form-panel active" id="login-form">
+          <h1 class="title">FinanceLab!</h1>
+          <p class="subtitle">Bem-vindo de volta.</p>
+          <form>
+            <input type="text" placeholder="email or username" required />
+            <input type="password" placeholder="password" required />
+            <div class="options">
+              <label><input type="checkbox" /> Remember</label>
+              <a href="#" onclick="switchForm('forgot-form')">Forgot your password?</a>
+            </div>
+            <button type="submit" class="btn-next">NEXT →</button>
+          </form>
+          <div class="form-footer">
+            <a href="#" onclick="switchForm('register-form')">Create account</a>
+          </div>
+        </div>
+
+        <!-- FORMULÁRIO DE REGISTRO -->
+        <div class="form-panel" id="register-form">
+          <h1 class="title">CREATE ACCOUNT</h1>
+          <p class="subtitle">Vamos começar!</p>
+          <form>
+            <input type="text" placeholder="username" required />
+            <input type="email" placeholder="email" required />
+            <input type="password" placeholder="password" required />
+            <button type="submit" class="btn-next">REGISTER →</button>
+          </form>
+          <div class="form-footer">
+            <a href="#" onclick="switchForm('login-form')">Already have an account?</a>
+          </div>
+        </div>
+
+        <!-- FORMULÁRIO DE RECUPERAÇÃO DE SENHA -->
+        <div class="form-panel" id="forgot-form">
+          <h1 class="title">RESET PASSWORD</h1>
+          <p class="subtitle">Enviaremos um link para o seu e-mail.</p>
+          <form>
+            <input type="email" placeholder="your email" required />
+            <button type="submit" class="btn-next">SEND LINK →</button>
+          </form>
+          <div class="form-footer">
+            <a href="#" onclick="switchForm('login-form')">Back to login</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

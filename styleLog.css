@@ -1,0 +1,178 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body, html {
+  height: 100%;
+  background: #a55e5e;
+}
+
+/* Container principal com duas colunas */
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Painel da esquerda: imagem */
+.left-panel {
+  flex: 1;
+  background-image: url('imagens/imagem.jpg.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Painel da direita */
+.right-panel {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #92a382, #f2f2f2);
+  padding: 20px;
+  position: relative;
+}
+
+/* Wrapper dos formulários */
+.form-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  height: 420px;
+  overflow: hidden;
+}
+
+/* Estilização de cada formulário */
+.form-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.4s ease;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.form-panel.active {
+  opacity: 1;
+  transform: translateY(0);
+  z-index: 1;
+  pointer-events: auto;
+  transition-delay: 0.1s;
+}
+
+/* Título e subtítulo */
+.title {
+  font-size: 2.2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #777;
+  font-size: 0.95rem;
+  margin-bottom: 25px;
+}
+
+/* Campos de entrada */
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #fff;
+  transition: border 0.3s;
+}
+
+form input:focus {
+  border-color: #0078d4;
+  outline: none;
+}
+
+/* Botão */
+.btn-next {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: #303d47;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-next:hover {
+  background: #304d63;
+}
+
+/* Opções abaixo do campo de senha */
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.options label {
+  display: flex;
+  align-items: center;
+}
+
+.options a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.options a:hover {
+  text-decoration: underline;
+}
+
+/* Rodapé dos formulários */
+.form-footer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.form-footer a {
+  text-decoration: none;
+  color: #0078d4;
+  font-weight: 500;
+}
+
+.form-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsivo para telas menores */
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .left-panel {
+    display: none;
+  }
+
+  .right-panel {
+    flex: 1;
+    padding: 40px 20px;
+  }
+
+  .form-wrapper {
+    max-width: 100%;
+    height: auto;
+  }
+}
