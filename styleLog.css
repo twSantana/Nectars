@@ -8,32 +8,31 @@
 
 body, html {
   height: 100%;
-  background: #a55e5e;
+  min-height: 100%;;
+  background: linear-gradient(to right, #293096, #000000);
 }
 
 /* Container principal com duas colunas */
 .container {
   display: flex;
-  height: 100vh;
+  flex-direction: row;
+  flex-wrap: wrap;
+  min-height: 100vh;
 }
 
 /* Painel da esquerda: imagem */
-.left-panel {
-  flex: 1;
-  background-image: url('imagem.jpg');
-  background-size: cover;
-  background-position: center;
-}
+
 
 /* Painel da direita */
 .right-panel {
-  flex: 1;
+  flex: auto;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to right, #92a382, #f2f2f2);
+  background: linear-gradient(to right, #293096, #000000);
   padding: 20px;
-  position: relative;
+  
 }
 
 /* Wrapper dos formulários */
@@ -41,8 +40,9 @@ body, html {
   position: relative;
   width: 100%;
   max-width: 380px;
-  height: 420px;
-  overflow: hidden;
+  height: auto;
+  padding: 20px;
+  
 }
 
 /* Estilização de cada formulário */
@@ -69,12 +69,13 @@ body, html {
 /* Título e subtítulo */
 .title {
   font-size: 2.2rem;
-  color: #333;
-  margin-bottom: 10px;
+  color: #cccbcb;
+  margin-bottom: 22px;
+  position: relative;
 }
 
 .subtitle {
-  color: #777;
+  color: #d1d1d1;
   font-size: 0.95rem;
   margin-bottom: 25px;
 }
@@ -167,12 +168,16 @@ form input:focus {
   }
 
   .right-panel {
-    flex: 1;
+    flex: unset;
+    min-height: 100vh;
     padding: 40px 20px;
+    justify-content: center;
+    align-items: center;
   }
 
   .form-wrapper {
     max-width: 100%;
     height: auto;
+    padding: 20px;
   }
 }
