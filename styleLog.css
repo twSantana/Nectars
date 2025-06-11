@@ -20,9 +20,6 @@ body, html {
   min-height: 100vh;
 }
 
-/* Painel da esquerda: imagem */
-
-
 /* Painel da direita */
 .right-panel {
   flex: auto;
